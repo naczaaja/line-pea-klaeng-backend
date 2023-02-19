@@ -1,12 +1,8 @@
-FROM 1.20.0-alpine3.17 As backend
+FROM golang:1.19.0
 
-WORKDIR /app
+WORKDIR /usr/src/app/lineoa-klaeng/backend
 
-COPY ./go.mod ./
-COPY ./go.sum ./
+RUN go install github.com/cosmtrek/air@latest
 
-RUN go mod download
-
-COPY ./ ./
-
-RUN go build -o server
+COPY . .
+RUN go mod tidy
