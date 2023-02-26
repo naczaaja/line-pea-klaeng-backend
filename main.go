@@ -18,6 +18,7 @@ func main() {
 	e.Use(middleware.CORS())
 
 	routers.GetHello(e)
+	routers.PostClientDataRegister(e)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
