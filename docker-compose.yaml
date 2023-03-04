@@ -8,7 +8,7 @@ services:
     ports:
       - "13234:1323"
     volumes:
-      - .:/usr/src/app/lineoa-klaeng/backend
+      - .:/src/app/backend
     command: air ./main.go -b 0.0.0.0
     networks:
       - lineoa-klaeng-network
